@@ -1,0 +1,79 @@
+<html>
+<head>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="js/script.js"></script>
+</head>
+<body>
+
+<form id="msform" action="/register" method="post">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li>Personal Details</li>
+    <li>Password Setup</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Account Setup</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+    <input type="text" name="f_name" placeholder="First Name" />
+    <input type="text" name="l_name" placeholder="Last Name" />
+    <input type="text" name="email" placeholder="Email Id" />
+    <input type="number" name="contact_no" placeholder="Contact number" />
+    <input type="text" name="address" placeholder="Address" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input id="myFileInput" type="file" accept="capture=camera">
+    <div class="image-cropper" id = "profileimage">
+    <img src="http://www.electricvelocity.com.au/Upload/Blogs/smart-e-bike-side_2.jpg"  />
+</div>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset id = "pattern_fieldset">
+    <h2 class="fs-title">Password Setup</h2>
+    <h3 class="fs-subtitle" id = "heading"></h3>
+   
+<div class="row patterncontainer" id = "patterncontainer"  >
+      <div class="col s12 center section " >
+          <div id = "button1" class="button"></div>       
+      </div>
+      <div class="col s6 center section " ><div id = "button2" class="button"></div></div>
+      <div class="col s6  center section " ><div id = "button3" class="button"></div></div>
+      
+       <div class="col s6  center section " ><div id = "button4" class="button"></div></div>
+      <div class="col s6  center section " ><div id = "button5" class="button"></div></div>
+       <div class="col  s12  center section " ><div id = "button6" class="button"></div></div>
+
+    </div>
+    <button type="button" class=" action-button" onclick="resetPattern()"  >Reset</button>
+    <button type="button" class=" action-button" onclick="clearPattern()" >Clear</button>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+   <!--  <div id="patterncontainer" class="patterncontainer">
+   
+</div> -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script> 
+
+</body>
+
+ 
+</html>

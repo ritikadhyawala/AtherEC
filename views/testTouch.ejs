@@ -1,0 +1,77 @@
+<html>
+<head>
+<script>
+ 
+window.addEventListener('load', function(){
+ 
+    var box1 = document.getElementById('box1')
+    var statusdiv = document.getElementById('statusdiv')
+    var startx = 0
+    var dist = 0
+ 
+    box1.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+        startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
+        statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
+        e.preventDefault()
+    }, false)
+ 
+    box1.addEventListener('touchmove', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        var dist = parseInt(touchobj.clientX) - startx
+        statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
+        e.preventDefault()
+    }, false)
+ 
+    box1.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
+        e.preventDefault()
+    }, false)
+ 
+}, false)
+ 
+</script>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script>
+
+</script>
+<script src="js/script.js"></script>
+</head>
+</head>
+<body>
+<div class="box" id="box1">
+<h3> Touch Me! </h3>
+</div>
+ 
+<h3 id="statusdiv">Status</h3>
+
+ <h2 id="heading" class="heading">Please set your password</h2>
+ <div class="row patterncontainer" id = "patterncontainer"  >
+      <div class="col s12 center section " >
+          <div id = "button1" class="button"></div>
+            
+      </div>
+      <div class="col s6 center section " ><div id = "button2" class="button"></div></div>
+      <div class="col s6  center section " ><div id = "button3" class="button"></div></div>
+      
+       <div class="col s6  center section " ><div id = "button4" class="button"></div></div>
+      <div class="col s6  center section " ><div id = "button5" class="button"></div></div>
+       <div class="col s12  center section " ><div id = "button6" class="button"></div></div>
+
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script> 
+
+</body>
+</html>

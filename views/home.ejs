@@ -1,0 +1,124 @@
+<html>
+<head>
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+  <div id = "container">
+<!-- <div class="fullscreen slider ">
+    <ul class="slides atherpics">
+      <li>
+        <img src="images/Ather1.jpg"> 
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/Ather2.jpg"> 
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/Ather3.jpg"> 
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      
+    </ul>
+    
+  </div> -->
+
+
+  <div class="banner">    
+    <!--header-->
+    
+    <div class="banner-text">
+      <img src="images/logo_0.svg" class="logo" alt="" style = "height: 80px;
+      width: 62px;"/>
+
+      <div class="emailblock" id = "emailblock">
+        <form action="/details" method="get" class="msform">
+          <input type="text" name="email" placeholder="Enter the email id if you have not registered or scheduled" /> 
+          <input type="submit" class = "action-button" value="Submit">
+        </form>
+
+
+      </div>
+
+      <h5>The scheduled users for today's test ride</h5>
+      <!--//End-slider-script -->
+      <div class="carousel footer" id = "userlist">
+
+
+        <% _.each(users, function (user) { %>
+        <a class="carousel-item" href="/registered?name=<%=user.f_name%>&email=<%=user.email%>">
+         <div class="profile-grid logo float-lt">
+          <% if(user.profile_pic !=null){ %>
+          <img src='<%= user.profile_pic%>' alt="">
+          <% } else { %>
+          <img src='images/img1.jpg' alt="">
+          <% } %>
+          <h2><%= user.f_name%></h2>
+        </div>
+      </a>
+      <% }) %>
+
+       <!--  <a class="carousel-item" href="#one!">
+         <div class="profile-grid logo float-lt">
+          <img src="images/img1.jpg" alt="">
+          <h2>Ritika</h2>
+        </div>
+      </a>
+      <a class="carousel-item" href="#two!">
+      <div class="profile-grid logo float-lt">
+        <img src="images/img1.jpg" alt="">
+        <h2>Ritika</h2>
+      </div></a>
+      <a class="carousel-item" href="#three!">
+        <div class="profile-grid logo float-lt">
+          <img src="images/img1.jpg" alt="">
+          <h2>Ritika</h2>
+        </div>
+      </a>
+      <a class="carousel-item" href="#four!">
+        <div class="profile-grid logo float-lt">
+          <img src="images/img1.jpg" alt="">
+          <h2>Ritika</h2>
+        </div>
+      </a>
+      <a class="carousel-item" href="#five!">
+        <div class="profile-grid logo float-lt">
+          <img src="images/img1.jpg" alt="">
+          <h2>Ritika</h2> 
+        </div>
+      </a>-->
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script> 
+
+</body>
+
+
+</html>
+
+
+

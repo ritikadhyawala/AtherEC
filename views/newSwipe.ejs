@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script>
+$(function(){
+
+   var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+    var canvasOffset=$("#canvas").offset();
+    var offsetX=canvasOffset.left;
+    var offsetY=canvasOffset.top;
+
+    var startX,startY,mouseX,mouseY;
+    var isDown=false;
+
+    var lines=[];
+
+    var imageOpacity=0.33;
+
+    var img=new Image();
+    img.crossOrigin="anonymous";
+    img.onload=start;
+    img.src="https://dl.dropboxusercontent.com/u/139992952/multple/heart.jpg";
+    function start(){
+
+        canvas.width=canvas.width=img.width;
+        canvas.height=img.height;
+        ctx.strokeStyle="green";
+        ctx.lineWidth=3;
+
+        $("#canvas").mousedown(function(e){handleMouseDown(e);});
+        $("#canvas").mousemove(function(e){handleMouseMove(e);});
+        $("#canvas").mouseup(function(e){handleMouseUp(e);});
+        $("#canvas").mouseout(function(e){handleMouseUp(e);});
+
+        // redraw the image
+        drawTheImage(img,imageOpacity);
+
+    }
+
+    function drawLines(toX,toY){
+        // clear the canvas
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        // redraw the image
+        drawTheImage(img,imageOpacity);
+
+        // redraw all previous lines
+        for(var i=0;i<lines.length;i++){
+            drawLine(lines[i]);
+        }
+
+        // draw the current line
+        drawLine({x1:startX,y1:startY,x2:mouseX,y2:mouseY});
+    }
+
+    function drawTheImage(img,opacity){
+        ctx.globalAlpha=opacity;
+        ctx.drawImage(img,0,0);
+        ctx.globalAlpha=1.00;
+    }
+
+    function drawLine(line){
+        ctx.beginPath();
+        ctx.moveTo(line.x1, line.y1);
+        ctx.lineTo(line.x2, line.y2);
+        ctx.stroke();
+    }
+
+
+
+
+    function handleMouseDown(e){
+      e.stopPropagation();
+      e.preventDefault();
+      mouseX=parseInt(e.clientX-offsetX);
+      mouseY=parseInt(e.clientY-offsetY);
+
+      // Put your mousedown stuff here
+      startX=mouseX;
+      startY=mouseY;
+      isDown=true;
+    }
+
+    function handleMouseUp(e){
+      e.stopPropagation();
+      e.preventDefault();
+
+      // Put your mouseup stuff here
+      isDown=false;
+      lines.push({x1:startX,y1:startY,x2:mouseX,y2:mouseY});
+    }
+
+    function handleMouseMove(e){
+      if(!isDown){return;}
+      e.stopPropagation();
+      e.preventDefault();
+      mouseX=parseInt(e.clientX-offsetX);
+      mouseY=parseInt(e.clientY-offsetY);
+
+      // Put your mousemove stuff here
+      drawLines(mouseX,mouseY);
+
+    }
+
+
+}); // end $(function(){});
+</script>
+    </head>
+
+    <body>
+     
+
+
+    <div class="row" id = "pattern-div" style = "position : absolute" >
+      <div class="col s12 center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px"/></div>
+      <div class="col s6 center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px "/></div>
+      <div class="col s6  center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px"/></div>
+      
+       <div class="col s6  center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px"/></div>
+      <div class="col s6  center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px"/></div>
+       <div class="col s12  center section"><img src="images/Red_Dot.png" style = "height:40px;margin:50px"/></div>
+
+    </div>
+
+    <canvas id = "canvas" style = "position : absolute"></canvas>
+   
+    
+          <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script> 
+    </body>
+  </html>
