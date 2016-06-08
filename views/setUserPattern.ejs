@@ -23,7 +23,7 @@
       <div class="here-bottom">
         <img src="images/img1.jpg" alt="">
         <h4>Hi <%= name %>,</h4>
-        <h6>Please set your swipe pattern</h6>
+        <h6 id = "heading">Please set your swipe pattern</h6>
       </div>
     </div>
   </div>
@@ -45,8 +45,14 @@
 
         </div>
         <button type="button" class=" action-button" onclick="resetPattern()"  >Reset</button>
-        <a href = "#"> <button type="button" class=" action-button" >Submit</button></a>
+        <a href = "#"> <button type="button" onclick = "savePattern()" class=" action-button" >Submit</button></a>
 
+<script>
+ function savePattern(){
+
+   window.open("/welcome",'_parent');
+ }
+</script>
       </div>
     </div>
     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>

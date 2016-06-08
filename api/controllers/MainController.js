@@ -36,7 +36,15 @@ module.exports = {
      function(error){
 
     }, function(data){
-      res.send("User Logged in");
+      var user = JSON.parse(data);
+      console.log(user);
+      if(user[0] && user[0].email){
+      
+      res.view("setUserPattern", {name : user[0].f_name, email : user[0].email});
+    }else{
+      res.view("notRegistered");
+    }
+
     });
   },
 
@@ -46,9 +54,10 @@ registerNewUser : function( req, res){
     DataConnectionService.postJSONData("/user/create?" + "f_name=" + req.param("f_name") + "&l_name=" +
      req.param("l_name")+ "&email="+ req.param("email")+ "&password="+ req.param("password")+
        "&contact_no="+ req.param("contact_no")+ "&address="+ req.param("address") ,function(err){
-        error(err);
+        res.view("home");
+
     }, function (data){
-      res.view("home");
+      res.view("welcomeEC");
     }
     );
   },

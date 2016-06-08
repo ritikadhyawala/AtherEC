@@ -46,7 +46,7 @@ module.exports.routes = {
     view: 'newSwipe'
   },
 
-  '/newSwipePage1': {
+  '/toregister': {
     view: 'newSwipe1'
   },
 
@@ -56,6 +56,9 @@ module.exports.routes = {
 
   '/photo': {
     view: 'photo'
+  },
+  '/welcome' : {
+    view: 'welcomeEC'
   },
 
   /***************************************************************************

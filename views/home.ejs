@@ -47,23 +47,21 @@
     <!--header-->
     
     <div class="banner-text">
-      <img src="images/logo_0.svg" class="logo" alt="" style = "height: 80px;
-      width: 62px;"/>
+      <img src="images/logo_0.svg" class="logo" alt="" style = "height: 120px;
+      width: auto;"/>
 
       <div class="emailblock" id = "emailblock">
         <form action="/details" method="get" class="msform">
-          <input type="text" name="email" placeholder="Enter the email id if you have not registered or scheduled" /> 
+          <input type="text" name="email" placeholder="Enter the email id" /> 
           <input type="submit" class = "action-button" value="Submit">
         </form>
 
 
       </div>
 
-      <h5>The scheduled users for today's test ride</h5>
+      <h5 >Please select your name if you have booked your test ride</h5>
       <!--//End-slider-script -->
       <div class="carousel footer" id = "userlist">
-
-
         <% _.each(users, function (user) { %>
         <a class="carousel-item" href="/registered?name=<%=user.f_name%>&email=<%=user.email%>">
          <div class="profile-grid logo float-lt">
@@ -110,6 +108,14 @@
   </div>
 </div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    setInterval(function(){ 
+    $('.carousel').carousel('next');}, 
+    3000);
+  });
+</script>
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
