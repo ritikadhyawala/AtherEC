@@ -43,7 +43,7 @@ body {
   height: 30px;
   border-style: solid;
   border-radius: 50%;
-  border-color: #FFF;
+  border-color: #000;
   border-width: 2px;
   margin: 22.5px auto;
   /*float: left;*/
@@ -280,18 +280,18 @@ position: relative;
   -moz-background-size:cover;
   -o-background-size:cover;
   -ms-background-size:cover;
-  min-height:800px;
+  min-height:300px;
 }
 
 @media (max-width: 991px)
 .banner-text {
     width: 80%;
-    padding: 6em 0;
+    padding: 0 0;
 }
 @media (max-width: 1080px)
 .banner-text {
     width: 75%;
-    padding: 6em 0;
+    padding: 0 0;
 }
 @media (max-width: 1280px)
 .banner-text {
@@ -300,12 +300,12 @@ position: relative;
 @media (max-width: 1366px)
 .banner-text {
     width: 57%;
-    padding: 8em 0;
+    padding: 0 0;
 }
 .banner-text {
     width: 51%;
     margin: 0 auto;
-    padding: 12em 0;
+    padding: 0 0;
     text-align: center;
 }
 
@@ -354,7 +354,7 @@ img {
 
 
 .first-one {
-  width: 300px;
+  width: 400px;
   margin: 50px auto;
   text-align: center;
   position: relative;
@@ -414,5 +414,36 @@ img {
 h5{
   color: #FFFFFF;
 }
+
+div.resp-tabs-container{
+     
+
+     height : 600px;
+  /*margin: 50px auto;*/
+  text-align: center;
+  
+      background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  
+  box-sizing: border-box;
+  width: 100%;
+ 
+  padding: 20px 30px;
+  /*stacking fieldsets above each other*/
+  position: relative;
+
+  }
+div.resp-tabs-container img, div.resp-tabs-container div {
+    margin: 0;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+
+  }
 
 
